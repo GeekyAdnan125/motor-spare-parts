@@ -1,5 +1,6 @@
 const express = require('express');
 const { signupHandler,   login } = require('../controller/auth');
+const { category, GetAllCategory } = require('../controller/category');
 const router = express.Router();
 
 router.get('/home' ,(req ,res) => {
@@ -7,4 +8,6 @@ router.get('/home' ,(req ,res) => {
 })
 router.post('/sigup' ,signupHandler);
 router.post('/login' ,login);
+router.post('/category' , category);
+router.get('/getcategory' , GetAllCategory)
 module.exports = router;
